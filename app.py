@@ -13,12 +13,63 @@ class StreamlitWorkbookApp:
         st.set_page_config(page_title="Логика на Яблоках 🍎", page_icon="🍏", layout="centered")
         st.markdown("""
             <style>
-            .stApp { background-color: #1E352F; color: #F4F9F4; }
-            h1, h2, h3 { color: #FF6B6B !important; font-family: 'Comic Sans MS', sans-serif; }
-            .stButton>button { background-color: #4E9F3D; color: white; border-radius: 12px; font-weight: bold; padding: 10px 24px; }
-            .stButton>button:hover { background-color: #D8E9A8; color: #1E352F; }
-            .task-card { background-color: #2E4C43; padding: 20px; border-radius: 15px; border-left: 5px solid #FF6B6B; margin-bottom: 20px; }
-            .hint-card { background-color: #3E6358; padding: 12px; border-radius: 8px; border-left: 4px solid #D8E9A8; }
+            /* Главный фон приложения */
+            .stApp { 
+                background-color: #1E352F !important; 
+                color: #F4F9F4 !important; 
+            }
+
+            /* Все заголовки h1, h2, h3 */
+            h1, h2, h3 { 
+                color: #FF6B6B !important; 
+                font-family: 'Comic Sans MS', sans-serif; 
+            }
+
+            /* Принудительный белый цвет для обычного текста, списков и подписей */
+            p, li, label, .stMarkdown, span, div {
+                color: #F4F9F4 !important;
+            }
+
+            /* Стилизация радио-кнопок (переключателей) */
+            div[data-testid="stMarkdownContainer"] p {
+                color: #F4F9F4 !important;
+            }
+
+            /* Кнопки проверки */
+            .stButton>button { 
+                background-color: #4E9F3D; 
+                color: white !important; 
+                border-radius: 12px; 
+                font-weight: bold; 
+                padding: 10px 24px; 
+            }
+            .stButton>button:hover { 
+                background-color: #D8E9A8; 
+                color: #1E352F !important; 
+            }
+
+            /* Карточки с заданиями */
+            .task-card { 
+                background-color: #2E4C43; 
+                padding: 20px; 
+                border-radius: 15px; 
+                border-left: 5px solid #FF6B6B; 
+                margin-bottom: 20px; 
+            }
+            .task-card p, .task-card h3 {
+                color: #F4F9F4 !important;
+            }
+
+            /* Карточки с подсказками */
+            .hint-card { 
+                background-color: #3E6358; 
+                padding: 12px; 
+                border-radius: 8px; 
+                border-left: 4px solid #D8E9A8; 
+            }
+            .hint-card p {
+                color: #F4F9F4 !important;
+            }
             </style>
         """, unsafe_allow_html=True)
 
